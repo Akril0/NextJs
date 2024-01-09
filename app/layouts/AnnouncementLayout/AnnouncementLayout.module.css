@@ -1,0 +1,85 @@
+
+.gridTemplate{
+    position: relative;
+    display: grid;
+    grid-template-columns:  1fr 280px;
+   height: 100%;
+}
+
+.posts{
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.formWrapper{
+    pointer-events: none;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+
+.form{
+    pointer-events: none;
+    position: absolute;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    padding: 30px 0;
+    transform: translate(-50%,-50%) scale(0.9);
+    width: 800px;
+    height: 600px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 401;
+    border-radius: 10px;
+    transition: all 0.1s ease-in-out 0s;
+    opacity: 0;
+}
+
+.form.active{
+    pointer-events: all;
+    transform: translate(-50%,-50%) scale(1);
+    opacity: 1;
+}
+
+.formBg {
+    pointer-events: none;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 400;
+    background: rgba(0, 0, 0, 0);
+    transition: all 0.1s ease-in-out 0s;
+    opacity: 0;
+}
+
+.formBg.active{
+    pointer-events: all;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 1;
+}
+
+
+.formOpen{
+    cursor: pointer;
+    position: absolute;
+    width: 250px;
+    padding: 15px 0;
+    color: white;
+    font-weight: 600;
+    background-color: #218651;
+    bottom: 40px;
+    left: 50px;
+    border-radius: 10px;
+    z-index: 400;
+    transition: all 0.1s ease-in-out 0s;
+}
+
+.formOpen:hover{
+    background-color: #217386;
+}
+
+.formOpen:active  {
+    transform: translateY(5px);
+}
+

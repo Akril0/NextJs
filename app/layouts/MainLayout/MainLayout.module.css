@@ -1,0 +1,11 @@
+.mainLayout{
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr;
+    overflow: hidden;
+}
+
+.announcementLayout{
+   height: 100%;
+    overflow: hidden;
+}
