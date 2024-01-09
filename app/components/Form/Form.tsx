@@ -1,4 +1,4 @@
-import styles from './Form.module.css';
+import styles from "./Form.module.css";
 import {FormEvent, useState} from "react";
 import {getCoordinatesForAddress} from "@/app//utils/getCoordinates";
 import {useDispatch} from "react-redux";

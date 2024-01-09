@@ -1,10 +1,15 @@
 'use client'
 
 import styles from "./AnnouncementLayout.module.css";
-import Map from "../../components/Map/Map";
 import Posts from "../../components/Posts/Posts";
 import Form from "../../components/Form/Form";
-import {useState} from "react";
+import React, { useState } from 'react';
+import dynamic from 'next/dynamic';
+
+const Map = dynamic(
+    () => import('../../components/Map/Map'), // Предположим, что ваш компонент карты находится здесь
+    { ssr: false } // Отключение серверного рендеринга для этого компонента
+);
 
 const AnnouncementLayout = () => {
     const [formActive, setFormActive] = useState<boolean>(false);
