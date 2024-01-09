@@ -1,10 +1,10 @@
 import styles from './Form.module.css';
 import {FormEvent, useState} from "react";
-import {getCoordinatesForAddress} from "../../utils/getCoordinates";
+import {getCoordinatesForAddress} from "@/app//utils/getCoordinates";
 import {useDispatch} from "react-redux";
-import {setError} from "../../redux/slices/errorSlice";
-import {FormAdvertisementType} from "../../types/FormAdvertisementType";
-import {addPost} from "../../redux/slices/postSlice";
+import {setError} from "@/app/redux/slices/errorSlice";
+import {FormAdvertisementType} from "@/app/types/FormAdvertisementType";
+import {addPost} from "@/app/redux/slices/postSlice";
 
 type FormErrors = {
     title?: string,
@@ -70,7 +70,6 @@ const Form = () => {
                         longitude: coordinates[1],
                     },
                 };
-                console.log("Succses")
                 dispatch(addPost(newPost))
 
             } else {
