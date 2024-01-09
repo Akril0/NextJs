@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction} from "@reduxjs/toolkit";
-import posts from '@/app/api/data/advertisements.json'
 import {AdvertisementTypes} from "../../types/AdvertisementTypes";
 import {RootState} from "../store";
 import {FormAdvertisementType} from "../../types/FormAdvertisementType";
@@ -8,12 +7,15 @@ import {FormAdvertisementType} from "../../types/FormAdvertisementType";
 
 
 
-const initialState:AdvertisementTypes[] = posts.advertisements
+const initialState:AdvertisementTypes[] = [];
 
 const postSlice = createSlice(({
     name: 'posts',
     initialState,
     reducers: {
+        setPosts: (state, action:PayloadAction<AdvertisementTypes[]>, )=>{
+            return action.payload;
+        },
         addPost: (state, action:PayloadAction<FormAdvertisementType>) => {
             const newPost:AdvertisementTypes ={
                 ...action.payload,
@@ -24,7 +26,7 @@ const postSlice = createSlice(({
     }
 }))
 
-export const {addPost} = postSlice.actions;
+export const {setPosts, addPost} = postSlice.actions;
 
 export const postsArr = (state:RootState) => state.posts;
 
