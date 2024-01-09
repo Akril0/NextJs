@@ -111,7 +111,7 @@ const Form = () => {
 
                 <div className={styles.contacts}>
                     <div className={styles.inputLabel}>
-                        <label htmlFor="name">Ім'я: </label>
+                        <label htmlFor="name">{'Ім\'я:'}</label>
                         <input type="text" id="name" name="name" value={name}
                                onChange={(e) => setName(e.target.value)}
                                className={(errors.name ? styles.inputError : '')}/>
